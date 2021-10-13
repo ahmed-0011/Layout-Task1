@@ -8,27 +8,29 @@
 import UIKit
 
 protocol MainViewDelegate {
-    var data: [Data] { get }
+    func onButtonClick(type: String)
 }
 
 class MainView: UIView {
     
     @IBOutlet var tableView: UITableView!
+    var data: [Data] = []
     var delegate: MainViewDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        tableViewInit()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
+        initTableView()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         commonInit()
+        initTableView()
     }
     
     func commonInit() {
@@ -39,7 +41,7 @@ class MainView: UIView {
         addSubview(view)
      }
      
-     func tableViewInit() {
+     func initTableView() {
          tableView.register(SmallTableViewCell.nib(), forCellReuseIdentifier: SmallTableViewCell.identifire)
          tableView.register(LargeTableViewCell.nib(), forCellReuseIdentifier: LargeTableViewCell.identifire)
          tableView.delegate = self
@@ -52,32 +54,20 @@ class MainView: UIView {
 extension MainView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return data.count
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return (delegate?.data.count)!
-    }
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        
-        if section != 2 {
-            return 15.0
-        }
-        return 0.0
-    }
-
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.section == 0 {
+        if indexPath.row == 0 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: LargeTableViewCell.identifire) as? LargeTableViewCell {
-                cell.configure(with: delegate?.data[indexPath.section] ?? Data())
+                cell.configure(with: data[indexPath.row], delegate!)
                 return cell
             }
         }
         else {
             if let cell = tableView.dequeueReusableCell(withIdentifier: SmallTableViewCell.identifire) as? SmallTableViewCell {
-                cell.configure(with: delegate?.data[indexPath.section] ?? Data())
+                cell.configure(with: data[indexPath.row], delegate!)
                 return cell
             }
         }
@@ -90,14 +80,5 @@ extension MainView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.layer.masksToBounds = true
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
-        let header = view as! UITableViewHeaderFooterView
-        header.contentView.backgroundColor = UIColor(red: 0.94, green: 0.94, blue: 0.94, alpha: 0.8)
     }
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E2AF019727132F0800E420AD /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AF019627132F0800E420AD /* Data.swift */; };
 		E2AF019A27135F3C00E420AD /* TableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AF019927135F3C00E420AD /* TableData.swift */; };
+		E2C79F6327171B92005739BE /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C79F6227171B92005739BE /* EmptyViewController.swift */; };
 		E2D6BA272715A3BD008E4913 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D6BA262715A3BD008E4913 /* MainView.swift */; };
 		E2D6BA292715A3CC008E4913 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D6BA282715A3CC008E4913 /* MainView.xib */; };
 		E2EF1ED72713200B008F57B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EF1ED62713200B008F57B4 /* AppDelegate.swift */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		E2AF019627132F0800E420AD /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		E2AF019927135F3C00E420AD /* TableData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableData.swift; sourceTree = "<group>"; };
+		E2C79F6227171B92005739BE /* EmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
 		E2D6BA262715A3BD008E4913 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E2D6BA282715A3CC008E4913 /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
 		E2EF1ED32713200B008F57B4 /* LayoutTask1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LayoutTask1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				E2EF1EDA2713200B008F57B4 /* MainViewController.swift */,
+				E2C79F6227171B92005739BE /* EmptyViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				E2AF019A27135F3C00E420AD /* TableData.swift in Sources */,
 				E2EF1ED92713200B008F57B4 /* SceneDelegate.swift in Sources */,
 				E2EF1EF22713206E008F57B4 /* LargeTableViewCell.swift in Sources */,
+				E2C79F6327171B92005739BE /* EmptyViewController.swift in Sources */,
 				E2EF1EEE27132058008F57B4 /* SmallTableViewCell.swift in Sources */,
 				E2D6BA272715A3BD008E4913 /* MainView.swift in Sources */,
 			);

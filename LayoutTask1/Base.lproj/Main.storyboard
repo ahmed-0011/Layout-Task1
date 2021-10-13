@@ -18,7 +18,6 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0US-de-Tld" customClass="MainView" customModule="LayoutTask1" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="C6Z-zN-7yD"/>
@@ -37,6 +36,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gCb-SM-Edj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-54" y="-204"/>
+        </scene>
+        <!--Empty View Controller-->
+        <scene sceneID="LbA-KP-cww">
+            <objects>
+                <viewController storyboardIdentifier="EmptyViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jsk-O8-hNV" customClass="EmptyViewController" customModule="LayoutTask1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cXG-ed-zMU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbo-sw-bes">
+                                <rect key="frame" x="164" y="419" width="86" height="58"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
+                                <state key="normal" title="Return"/>
+                                <connections>
+                                    <action selector="onButtonClick:" destination="jsk-O8-hNV" eventType="touchUpInside" id="4pB-AR-bP2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KFX-kD-Cky"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mbo-sw-bes" firstAttribute="centerY" secondItem="cXG-ed-zMU" secondAttribute="centerY" id="StZ-QW-85B"/>
+                            <constraint firstItem="mbo-sw-bes" firstAttribute="centerX" secondItem="cXG-ed-zMU" secondAttribute="centerX" id="zz2-LA-kqC"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="amg-KA-VPW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="683" y="-204"/>
         </scene>
     </scenes>
     <resources>
